@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroMonitor Pro | Infografía Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: -29px;
+            width: 18px;
+            height: 18px;
+            background-color: #EF7B45;
+            border-radius: 9999px;
+            border: 4px solid #CDEDF6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <main>
+        <section class="text-center py-20 px-4 bg-cover bg-center" style="background-color: #042A2B;">
+            <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-wider">AgroMonitor Pro</h1>
+            <p class="mt-4 text-xl md:text-2xl font-light text-[#CDEDF6]">Democratizando la Agricultura de Precisión en Argentina</p>
+        </section>
+
+        <section class="py-16 px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-4 text-[#042A2B]">El Desafío del Campo Argentino</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-600">
+                    Las PYMES agrícolas enfrentan una brecha digital y altos costos de insumos. La gestión reactiva reduce su rentabilidad y pone en riesgo la sostenibilidad de sus operaciones, creando una necesidad urgente de herramientas más inteligentes y accesibles.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <span class="text-5xl">💧</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2">Costos de Riego</h3>
+                        <p>Uso ineficiente del agua que eleva los costos operativos.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <span class="text-5xl">🌱</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2">Insumos y Fertilizantes</h3>
+                        <p>Aplicación no optimizada que impacta en el presupuesto y el medio ambiente.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <span class="text-5xl">📡</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2">Brecha Tecnológica</h3>
+                        <p>Falta de acceso a herramientas de agricultura de precisión por su alto costo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-4 bg-[#CDEDF6]">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#042A2B]">Nuestra Solución: La Triada de Valor</h2>
+                 <p class="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-700">
+                    AgroMonitor Pro es una plataforma SaaS que integra tres pilares fundamentales para ofrecer una solución completa, accesible y predictiva, diseñada específicamente para las necesidades del productor argentino.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                         <span class="text-5xl">📍</span>
+                        <h3 class="text-2xl font-bold my-3 text-[#5EB1BF]">Hiper-localización</h3>
+                        <p>Integramos datos satelitales, climáticos y de suelo para ofrecer una visión precisa y localizada de cada lote.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <span class="text-5xl">💻</span>
+                        <h3 class="text-2xl font-bold my-3 text-[#5EB1BF]">Accesibilidad SaaS</h3>
+                        <p>Eliminamos las barreras de hardware costoso con un modelo de suscripción flexible y económico.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <span class="text-5xl">🧠</span>
+                        <h3 class="text-2xl font-bold my-3 text-[#5EB1BF]">Acción Predictiva (IA)</h3>
+                        <p>Usamos inteligencia artificial para anticipar plagas y optimizar el uso de riego y fertilizantes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-4">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <h2 class="text-3xl font-bold text-[#042A2B] mb-4">Impacto Directo en la Rentabilidad</h2>
+                    <p class="text-lg text-gray-600 mb-4">
+                       El objetivo principal de AgroMonitor Pro es transformar datos en decisiones que ahorren dinero. Nuestra tecnología permite una gestión proactiva que se traduce en una reducción significativa de los gastos más importantes del ciclo productivo.
+                    </p>
+                    <div class="bg-[#EF7B45] text-white p-6 rounded-lg shadow-xl text-center">
+                        <p class="text-2xl font-bold">Reducción de Costos Operativos</p>
+                        <p class="text-5xl font-black">15% - 25%</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-center mb-4">Optimización de Gastos</h3>
+                    <div class="chart-container">
+                        <canvas id="impactChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-4 bg-gray-100">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-[#042A2B]">Nuestra Hoja de Ruta Estratégica</h2>
+                <div class="relative pl-8 border-l-4 border-[#CDEDF6]">
+                    <div class="mb-12 timeline-item">
+                        <h3 class="text-2xl font-bold text-[#EF7B45]">12 Meses: MVP Escalable</h3>
+                        <p class="text-lg text-gray-700">Lanzar un Producto Mínimo Viable (TRL7) robusto, integrando al menos 3 fuentes de datos locales clave para validar nuestra tecnología en el campo.</p>
+                    </div>
+                    <div class="mb-12 timeline-item">
+                        <h3 class="text-2xl font-bold text-[#EF7B45]">18 Meses: Crecimiento Inicial</h3>
+                        <p class="text-lg text-gray-700">Alcanzar la gestión de 5,000 hectáreas en la zona núcleo (Córdoba-Santa Fe), estableciendo una base sólida de clientes y casos de éxito.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="text-2xl font-bold text-[#EF7B45]">3 Años: Sostenibilidad Financiera</h3>
+                        <p class="text-lg text-gray-700">Lograr el punto de equilibrio operativo, demostrando un modelo de negocio sostenible y preparado para la expansión regional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-4 text-[#042A2B]">Planes Flexibles para cada Productor</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-600">
+                    Ofrecemos un modelo de precios escalable que permite a cualquier productor, sin importar su tamaño, empezar a beneficiarse de la agricultura de precisión y crecer con nosotros.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white border-2 border-gray-200 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Freemium</h3>
+                        <p class="text-gray-500 h-24">Monitoreo satelital básico con índices NDVI para un seguimiento general del cultivo.</p>
+                        <p class="text-4xl font-black my-4">Gratis</p>
+                    </div>
+                    <div class="bg-white border-4 border-[#EF7B45] p-8 rounded-lg transform scale-105 shadow-2xl">
+                        <h3 class="text-2xl font-bold mb-4 text-[#EF7B45]">Pro</h3>
+                        <p class="text-gray-500 h-24">Módulos predictivos de plagas, riego y fertilización para una toma de decisiones optimizada.</p>
+                        <p class="text-4xl font-black my-4">Por Suscripción</p>
+                    </div>
+                    <div class="bg-white border-2 border-gray-200 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+                        <p class="text-gray-500 h-24">Soluciones personalizadas, integraciones y soporte dedicado para cooperativas y grandes cuentas.</p>
+                        <p class="text-4xl font-black my-4">Personalizado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-4 bg-gray-100">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-[#042A2B] mb-4">Nuestra Ventaja Competitiva</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                       En un mercado con grandes jugadores, nos diferenciamos por ser una solución independiente, centrada en los datos locales y diseñada para la realidad del campo argentino, incluyendo la conectividad limitada. El gráfico de radar muestra cómo nos posicionamos frente a las soluciones tradicionales en áreas clave.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-lg">
+                        <li><span class="font-bold">Independencia de Insumos:</span> No estamos atados a ninguna marca.</li>
+                        <li><span class="font-bold">Enfoque Predictivo:</span> Usamos IA para anticipar, no solo para reportar.</li>
+                        <li><span class="font-bold">Funcionalidad Offline:</span> Clave para zonas con baja conectividad.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-center mb-4">Análisis Comparativo</h3>
+                    <div class="chart-container">
+                        <canvas id="competitorChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-[#042A2B] text-white text-center py-8 px-4">
+            <p class="font-bold text-xl">AgroMonitor Pro</p>
+            <p class="mt-2 text-[#CDEDF6]">Transformando el futuro del agro argentino con datos.</p>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const wrapLabel = (label, maxWidth) => {
+                if (typeof label !== 'string' || label.length <= maxWidth) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+            
+            const sharedTooltipOptions = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            };
+
+            const ctxImpact = document.getElementById('impactChart').getContext('2d');
+            new Chart(ctxImpact, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Costo Ahorrado', 'Costo Restante'],
+                    datasets: [{
+                        data: [20, 80],
+                        backgroundColor: ['#5EB1BF', '#CDEDF6'],
+                        borderColor: ['#5EB1BF', '#CDEDF6'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                           callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            const competitorLabels = [
+                'Precisión Hiperlocal', 
+                'Bajo Costo Inicial', 
+                'Independencia de Insumos', 
+                'Funcionalidad Offline', 
+                'Enfoque Predictivo (IA)'
+            ].map(label => wrapLabel(label, 16));
+
+            const ctxCompetitor = document.getElementById('competitorChart').getContext('2d');
+            new Chart(ctxCompetitor, {
+                type: 'radar',
+                data: {
+                    labels: competitorLabels,
+                    datasets: [{
+                        label: 'AgroMonitor Pro',
+                        data: [9, 8, 9, 8, 9],
+                        backgroundColor: 'rgba(94, 177, 191, 0.2)',
+                        borderColor: '#5EB1BF',
+                        pointBackgroundColor: '#5EB1BF',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#5EB1BF'
+                    }, {
+                        label: 'Competidor Tradicional',
+                        data: [5, 4, 3, 4, 6],
+                        backgroundColor: 'rgba(239, 123, 69, 0.2)',
+                        borderColor: '#EF7B45',
+                        pointBackgroundColor: '#EF7B45',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#EF7B45'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                     plugins: {
+                        tooltip: {
+                           callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        },
+                        legend: {
+                           position: 'bottom'
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            ticks: {
+                                beginAtZero: true,
+                                max: 10,
+                                stepSize: 2,
+                                backdropColor: 'rgba(0, 0, 0, 0)',
+                                color: '#666'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
